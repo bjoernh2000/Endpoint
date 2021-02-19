@@ -3,8 +3,6 @@ from flask_cors import CORS, cross_origin
 import zipfile
 import os
 
-sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
-
 app = Flask(__name__)
 cors = CORS(app, resources={r"/endpoint": {"origins": "http://localhost:5000"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
